@@ -11,10 +11,10 @@ use App\Models\Slider;
 class IndexController extends Controller
 {
     //
-    public function accueil(){
+    public function index(){
         $sliders = Slider::All()->where('status', 1);
         $contents = Content::All();
-        return view('client.accueil')->with('contents', $contents)->with('sliders', $sliders);
+        return view('client.index')->with('contents', $contents)->with('sliders', $sliders);
     }
     public function news(){
         $contents = Content::All();

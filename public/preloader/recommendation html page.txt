@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="layout/css/preloader.css">
+<!-- start proloader script -->
+        <script src="assets/js/vendor/jquery-1.12.4.min.js"> </script>
+        <script src="assets/js/wow.min.js"> </script>
+        <script src="assets/js/scripts.js"> </script>
+<!-- end proloader script -->
+<!-- preloder-wrap start -->
+ <div id="cssLoader3" class="preloder-wrap">
+  <div class="loader">
+      <div class="child-common child4"></div>
+      <div class="child-common child3"></div>
+      <div class="child-common child2"></div>
+      <div class="child-common child1"></div>
+  </div>
+ </div>
+<!-- preloder-wrap -->
