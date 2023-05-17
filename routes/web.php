@@ -81,7 +81,7 @@ Route::get('/contact',[IndexController::class,'contact']);
 
 
 //Route::get('/admin', [AdminController::class, 'dashboard']);
-Route::group(['middleware'=> 'auth'], function(){
+// Route::group(['middleware'=> 'auth'], function(){
 Route::get('/addcategory', [CategoryController::class, 'addcategory']);
 Route::get('/categories', [CategoryController::class, 'categories']);
 Route::post('/savecategory', [CategoryController::class, 'savecategory']);
@@ -104,7 +104,7 @@ Route::get('/desactiver_slider/{id}',[SliderController::class, 'desactiver_slide
 Route::get('/activer_slider/{id}',[SliderController::class, 'activer_slider']);
 
 
-Route::get('/addproduct', [ProductController::class, 'addproduct'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/addproduct', [ProductController::class, 'addproduct'])->name('dashboard');
 Route::post('/saveproduct', [ProductController::class, 'saveproduct']);
 
 Route::get('/products', [ProductController::class, 'products']);
@@ -117,7 +117,7 @@ Route::get('/desactiver_product/{id}', [ProductController::class, 'desactiver_pr
 Route::get('/voircommandepdf/{id}', [PdfController::class, 'view_pdf']);
 
 
-});
+// });
 
 
 
