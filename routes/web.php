@@ -119,6 +119,8 @@ Route::get('/voircommandepdf/{id}', [PdfController::class, 'view_pdf']);
 
 // });
 
+// BackOffice
 
-
+Route::get('/backoffice',[BackController::class,'login'])->name('backofficce');
+Route::post('custom-login', [BackController::class, 'customLogin'])->name('login.custom');
 

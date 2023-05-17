@@ -63,16 +63,6 @@
                     {{Form::hidden('', $increment = $increment + 1)}}   
                     @endforeach
                   </tbody>
-                  <tfoot>
-                  <tr>
-                    <th>Num.</th>
-                    <th>Picture</th>
-                    <th>Product Name</th>
-                    <th>Product Category</th>
-                    <th>Product Price</th>
-                    <th>Actions</th>
-                  </tr>
-                  </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->

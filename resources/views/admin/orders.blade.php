@@ -55,15 +55,7 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Adresse</th>
-                                            <th>Client Names</th>
-                                            <th>Orders</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </tfoot>
+                                   
                                 </table>
                             </div>
                             <!-- /.card-body -->
