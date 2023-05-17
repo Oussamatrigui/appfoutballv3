@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\BackController;
 
 
 
@@ -25,18 +26,22 @@ use App\Http\Controllers\IndexController;
 |
 */
 
-Route::get('/admin', function () {
-return view('welcome');
-});
-Route::get('/dashboard', function () {
-return view('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-Route::middleware('auth')->group(function () {
-Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-require __DIR__.'/auth.php';
+
+// Admin
+
+
+Route::get('/admin', [AdminController::class, 'dash']);
+Route::get('signout', [BackController::class, 'signOut'])->name('signout');
+// Route::get('/dashboard', function () {
+// return view('admin.dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+// Route::middleware('auth')->group(function () {
+// Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+// Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+// Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+// require __DIR__.'/auth.php';
+
 Route::get('/home', [ClientController::class, 'home']);
 Route::get('/shop', [ClientController::class, 'shop']);
 Route::get('/panier', [ClientController::class, 'panier']);
@@ -63,7 +68,7 @@ Route::get('/activer_content/{id}', [ContentController::class, 'activer_content'
 Route::get('/desactiver_content/{id}', [ContentController::class, 'desactiver_content']);
 
 
-Route::get('/',[IndexController::class,'accueil']);
+Route::get('/',[IndexController::class,'index']);
 Route::get('/article/{titre}',[IndexController::class,'article']);
 Route::get('/news',[IndexController::class,'news']);
 Route::get('/select_par_cat/{category_name}', [productController::class, 'select_par_cat']);
@@ -76,7 +81,7 @@ Route::get('/contact',[IndexController::class,'contact']);
 
 
 //Route::get('/admin', [AdminController::class, 'dashboard']);
-Route::group(['middleware'=> 'auth'], function(){
+// Route::group(['middleware'=> 'auth'], function(){
 Route::get('/addcategory', [CategoryController::class, 'addcategory']);
 Route::get('/categories', [CategoryController::class, 'categories']);
 Route::post('/savecategory', [CategoryController::class, 'savecategory']);
@@ -99,7 +104,7 @@ Route::get('/desactiver_slider/{id}',[SliderController::class, 'desactiver_slide
 Route::get('/activer_slider/{id}',[SliderController::class, 'activer_slider']);
 
 
-Route::get('/addproduct', [ProductController::class, 'addproduct'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/addproduct', [ProductController::class, 'addproduct'])->name('dashboard');
 Route::post('/saveproduct', [ProductController::class, 'saveproduct']);
 
 Route::get('/products', [ProductController::class, 'products']);
@@ -112,7 +117,7 @@ Route::get('/desactiver_product/{id}', [ProductController::class, 'desactiver_pr
 Route::get('/voircommandepdf/{id}', [PdfController::class, 'view_pdf']);
 
 
-});
+// });
 
 
 
