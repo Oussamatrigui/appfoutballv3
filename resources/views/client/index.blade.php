@@ -121,7 +121,7 @@
                     <p class="paragraph">Vous trouverez ci-dessous tous les types et les tailles de produits de l'equipe
                         national ivoirienne</p>
                     <p><a href="{{ url('/home') }}" class="btn btn-primary">Decouvrir</a></p>
-                    <span class="price">$10 <a href="#">10% de réduction</a></span>
+                    <span class="price"> <a href="#">10% de réduction</a></span>
 
                 </div>
             </div>
