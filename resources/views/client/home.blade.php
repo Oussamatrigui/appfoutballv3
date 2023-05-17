@@ -314,7 +314,7 @@
                             alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
-                    <a href="https://eu.puma.com/fr/fr/home" class="partner"><img src="images/téléchargement-(10).png"
+                    <a href="https://eu.puma.com/fr/fr/home" class="partner"><img src="images/télé.jpg"
                             class="img-fluid" alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
