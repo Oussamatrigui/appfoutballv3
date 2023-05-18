@@ -15,6 +15,7 @@ use App\Mail\SendMail;
 use App\Cart;
 use Stripe\Charge;
 use Stripe\Stripe;
+use App\Models\User;
 use Session;
 
 
@@ -75,6 +76,35 @@ public function verify_login(Request $request){
 
      // return view('client.login_client');
  }
+
+
+ public function register_journalist(){
+    return view('register_journaliste');
+}
+
+
+public function journalistRegister(Request $request)
+{
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:8',
+    ]);
+
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role' => 'journalist',
+        'is_confirmed' => false,
+    ]);
+
+    return redirect('register_journalist')->with('status', 'Votre demande d\'inscription a été envoyée. Veuillez attendre la confirmation de l\'administrateur.');
+}
+
+
+
+
     public function home()
     {
         $sliders = Slider::All()->where('status', 1);

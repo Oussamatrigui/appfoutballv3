@@ -37,8 +37,13 @@ Admin & Journalist List
 
                             
                               <div class="card-body">
+                                
                                 <table id="example1" class="table table-bordered table-striped">
+                                 
+                                
                                   <thead>
+
+                                    <a class="btn btn-primary" id="add" href='{{url('/register_client')}}'>Add User Member </a> <br><br>
                                   <tr>
                                     <th>Num.</th>
                                     <th>Picture</th>
