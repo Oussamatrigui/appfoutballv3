@@ -1,17 +1,16 @@
 @extends('client.client_layout.index')
 @section('title')
-    contact
+    FIF | | | Contact
 @endsection
 
 @section('con')
     <!-- start content -->
-
     <div class="hero-wrap hero-bread" style="background-image: url('images/telephone.jpg');">
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span>
-                        <span>contact</span>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span>
+                        <span>Contact</span>
                     </p>
                     <h1 class="mb-0 bread">Contact</h1>
                 </div>
@@ -24,17 +23,17 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 ftco-animate">
                     <form action="{{ url('/enregistrer') }}" method="POST" class="billing-form">
-                        <h3 class="mb-4 billing-heading">contactez-nous</h3>
+                        <h3 class="mb-4 billing-heading">Contactez-nous</h3>
                         <div class="row align-items-end">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="firstname">nom</label>
+                                    <label for="firstname">Nom</label>
                                     <input type="text" class="form-control" name="name">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="lastname">prénon</label>
+                                    <label for="lastname">Prénom</label>
                                     <input type="text" class="form-control" name="address">
                                 </div>
                             </div>
