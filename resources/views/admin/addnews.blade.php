@@ -68,10 +68,10 @@
                 {{Form::label('', 'News Content',['for'=>'example'])}}
 
                 
-                {{Form::text('news_content', '',['class'=>'form-control','id'=>'example','placeholder'=>'Enter News Content'])}}
+                {{Form::textarea('news_content', '',['class'=>'form-control','id'=>'example','placeholder'=>'Enter News Content'])}}
 
               </div>
-              <label for="exampleInputFile">Product image</label>
+              <label for="exampleInputFile">News image</label>
               <div class="input-group">
                 <div class="custom-file">
                   {{-- <input type="file" class="custom-file-input" id="exampleInputFile">
