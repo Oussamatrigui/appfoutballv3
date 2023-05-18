@@ -1,6 +1,6 @@
 @extends('client.client_layout.index')
-@section('titre')
-    FIF | | |
+@section('title')
+    FIF | | | Equipe Nationale de la cote d-ivoire
 @endsection
 @section('con')
     <section id="home-section" class="hero">

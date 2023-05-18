@@ -1,6 +1,6 @@
 @extends('client.client_layout.index')
 @section('title')
-    news
+    News
 @endsection
 
 @section('con')
