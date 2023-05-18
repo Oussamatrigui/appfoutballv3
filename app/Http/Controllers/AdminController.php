@@ -69,6 +69,13 @@ class AdminController extends Controller
         return view('admin.admin_liste')->with('admin', $admin);
     }
 
+    
+
+    public function edit_profile_admin($id){
+        $admin = User::find($id);
+    return view ('admin.edit_profile_admin')->with('admin', $admin);
+}
+
 
     public function confirmJournalist(Request $request, $id)
     {
@@ -78,6 +85,31 @@ class AdminController extends Controller
 
         return back()->with('status', 'Le compte du journaliste a été confirmé avec succès.');
     }
+
+    public function update_profile_admin(Request $request){
+        $this->validate($request, [
+            'id' => 'required',
+            'name' => 'required', 
+            'email' => [
+                'required',
+                'email',
+                Rule::unique(User::class),
+            ],
+            // 'password' => 'required'
+            
+        ]);
+        $hashedPassword = Hash::make('password');
+        $client = User::find($request->input('id'));
+        $client->name = $request->input('name');
+        $client->email = $request->input('email');
+        $client->password = $hashedPassword;
+        $client->update();
+    
+        return redirect('admin_liste')->with('status', 'Mise à jour avec succès');
+    }
+
+
+    
 
     public function desactiver_Journalist(Request $request, $id)
     {

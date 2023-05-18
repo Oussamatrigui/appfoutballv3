@@ -53,7 +53,8 @@
 
                 {{Form::label('', 'Author name',['for'=>'example'])}}
 
-                {{Form::text('auteur', '',['class'=>'form-control','id'=>'example','placeholder'=>'Enter Author name'])}}
+                {{-- {{Form::text('auteur', '',['class'=>'form-control','id'=>'example','placeholder'=>'Enter Author name'])}} --}}
+                {{Form::select('auteur', $auteur , null , ['placeholder'=>'Select author name' , 'class' => 'form-control select2'] )}}
 
               </div>
               <div class="form-group">
@@ -90,7 +91,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
 
-                {{Form::submit('Save',['class'=>'btn btn-primary'])}}
+                {{Form::submit('Save',['class'=>'btn btn-success'])}}
             </div>
                 {!!Form::close()!!}
 

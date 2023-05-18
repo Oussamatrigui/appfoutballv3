@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Storage;
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\User;
 use App\Http\Middleware\CheckRole;
 
 class NewsController extends Controller
@@ -33,8 +34,9 @@ class NewsController extends Controller
     }
 
     public function addnews(){
-        
-            return view('admin.addnews');
+        // $auteur = User::all()->pluck('name', 'name')->where('role', 'journalist')->toArray();
+        $auteur = User::all()->pluck('name', 'name');
+        return view('admin.addnews')->with('auteur', $auteur);
     }
 
     public function savenews(Request $request){

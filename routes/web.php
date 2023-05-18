@@ -18,6 +18,8 @@ use App\Http\Controllers\NewsController;
 Route::get('/admin', [AdminController::class, 'dash']);
 Route::get('signout', [BackController::class, 'signOut'])->name('signout');
 Route::get('/client_registration',[AdminController::class,'client_registration']);
+Route::get('/edit_profile_admin/{id}',[AdminController::class,'edit_profile_admin']);
+Route::post('/update_profile_admin',[AdminController::class,'update_profile_admin']);
 
 Route::get('/register_journalist', [ClientController::class, 'register_journalist']);
 Route::post('/journalist-register', [ClientController::class, 'journalistRegister']);

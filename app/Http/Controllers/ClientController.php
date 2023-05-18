@@ -30,7 +30,7 @@ class ClientController extends Controller
 
 public function saveuser(Request $request){
         $this->validate($request , 
-                                ['name' => 'required' ,
+                                ['name' => 'nullable' ,
                                 'email' => 'required|unique:clients|min:5',
                                 'password' => 'required|min:4'
                                  ]);
