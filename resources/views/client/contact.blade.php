@@ -23,39 +23,39 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 ftco-animate">
-                    <form action="{{ url('/enregistrer') }}" method="POST" class="billing-form">
+                    <form action="{{ url('/contact') }}" method="POST" class="billing-form" novalidate>
+                        {{ csrf_field() }}
                         <h3 class="mb-4 billing-heading">contactez-nous</h3>
+                       
                         <div class="row align-items-end">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="firstname">nom</label>
-                                    <input type="text" class="form-control" name="name">
-                                </div>
+                            @if (Session::has('status'))
+                            <div class="alert alert-danger">
+                                {{ Session::get('status') }}
                             </div>
-                            <div class="col-md-12">
+                        @endif
+                            <div class="col-md-12 {{ $errors->has('name') ? 'has-error' : ''}}">
                                 <div class="form-group">
-                                    <label for="lastname">prénon</label>
-                                    <input type="text" class="form-control" name="address">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lastname">E-mail</label>
-                                    <input type="text" class="form-control" id="card-name" name="card_name">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lastname">Sujet</label>
-                                    <input type="text" class="form-control" id="card-name" name="card_name">
-                                </div>
-                            </div>
+                                    <label for="name" class=>name</label>
+                                    <input type="text" class="form-control" id="card-name" name="name">
+                                    {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
 
+                                </div>
+                            </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="lastname">Message</label>
-                                    <textarea class="form-control" id="card-number" rows="10" cols="50">
+                                    <label for="email">email</label>
+                                    <input type="text" class="form-control" id="card-name" name="email">
+                                    {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="msg">message</label>
+                                    <textarea class="form-control" id="card-number" rows="10" cols="50" name="msg">
                                     </textarea>
+                                    {!! $errors->first('msg', '<span class="help-block">:message</span>') !!}
+
                                 </div>
                             </div>
 

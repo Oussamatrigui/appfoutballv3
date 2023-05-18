@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\ContactMessageCreated;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
@@ -73,7 +74,12 @@ Route::get('/',[IndexController::class,'index']);
 Route::get('/article/{titre}',[IndexController::class,'article']);
 Route::get('/news',[IndexController::class,'news']);
 Route::get('/select_par_cat/{category_name}', [productController::class, 'select_par_cat']);
-Route::get('/contact',[IndexController::class,'contact']);
+Route::get('/contact',[IndexController::class,'create']);
+Route::post('/contact',[IndexController::class,'store']);
+Route::get('/test', function(){
+    return  new ContactMessageCreated('ouss', 'oussama@gmail.com', 'messa');
+});
+
 
 
 

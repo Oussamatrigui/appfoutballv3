@@ -47,7 +47,6 @@
 					   <div class="alert alert-danger">
 						   {{Session::get('status')}}
 					   </div>
-						
 					@endif
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
