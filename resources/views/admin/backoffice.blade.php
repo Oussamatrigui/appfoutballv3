@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
-                    <h3 class="card-header text-center">BackOffice Login</h3>
+                    <h3 class="card-header text-center">BackOffice</h3>
                     <div class="card-body">
                         @if (count($errors) > 0 )
                     
@@ -70,6 +70,10 @@
                                 <button type="submit" class="btn btn-primary btn-block">Signin</button>
                             </div>
                         </form>
+                        <br>
+                        <a class="col-md-7 col-form-label text-md-right" href="{{ url('register_journalist') }}">
+                            {{ __('Journalist Form ') }}
+                        </a>
                     </div>
                 </div>
             </div>

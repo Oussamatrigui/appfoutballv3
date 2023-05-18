@@ -56,7 +56,7 @@ Route::post('/modifier_quant/{id}', [ClientController::class, 'modifier_quant'])
 Route::get('/suppdupanier/{id}', [ClientController::class, 'suppdupanier']);
 Route::post('/creer_compte', [ClientController::class, 'creer_compte']);
 Route::post('/acceder_compte',[ClientController::class, 'acceder_compte']);
-Route::get('/logout',[ClientController::class, 'logout']);
+
 Route::post('/payer',[ClientController::class, 'payer']);
 Route::get('/detait', [ClientController::class, 'detait']);
 

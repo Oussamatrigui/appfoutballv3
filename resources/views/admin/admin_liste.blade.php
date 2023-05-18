@@ -43,7 +43,7 @@ Admin & Journalist List
                                 
                                   <thead>
 
-                                    <a class="btn btn-primary" id="add" href='{{url('/register_client')}}'>Add User Member </a> <br><br>
+                                    <a class="btn btn-primary" id="add" href='{{url('/register_journalist')}}'>Add User Member </a> <br><br>
                                   <tr>
                                     <th>Num.</th>
                                     <th>Picture</th>

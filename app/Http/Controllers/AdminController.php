@@ -68,6 +68,26 @@ class AdminController extends Controller
         $admin = User::All();
         return view('admin.admin_liste')->with('admin', $admin);
     }
+
+
+    public function confirmJournalist(Request $request, $id)
+    {
+        $journalist = User::findOrFail($id);
+
+        $journalist->update(['is_confirmed' => true]);
+
+        return back()->with('status', 'Le compte du journaliste a été confirmé avec succès.');
+    }
+
+    public function desactiver_Journalist(Request $request, $id)
+    {
+        $journalist = User::findOrFail($id);
+
+        $journalist->update(['is_confirmed' => false]);
+
+        return back()->with('session', 'Le compte du journaliste a été desactiver avec succès.');
+    }
+
     
 
 }
