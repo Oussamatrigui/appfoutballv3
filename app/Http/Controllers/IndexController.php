@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Models\Slider;
-<<<<<<< HEAD
 use Illuminate\support\Facades\Mail;
 use App\http\Requests\ContactRequest;
 use App\Mail\ContactMessageCreated;
 
-=======
+
 use App\Models\News;
->>>>>>> a81a4b773f260d013f6f01d6328ac52b3447379d
 
 
 
