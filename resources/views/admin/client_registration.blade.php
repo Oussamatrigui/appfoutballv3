@@ -69,7 +69,7 @@
                                           <td>
                                            
                                             <a href="{{url('/edit_profile_client/'.$client-> id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                                            <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
+                                            <a href="{{url('/delete_client/'.$client-> id)}}" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
                                             
                                           </td>
                                         </tr>

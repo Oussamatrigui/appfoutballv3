@@ -76,6 +76,16 @@ class AdminController extends Controller
     return view ('admin.edit_profile_admin')->with('admin', $admin);
 }
 
+public function delete_user($id){
+    $user = User::find($id);
+    $user->delete();
+    return back()->with('status', 'l utilisateur a été supprimé avec succès');
+}
+public function delete_client($id){
+    $client = Client::find($id);
+    $client->delete();
+    return back()->with('status', 'Le Client a été supprimé avec succès');
+}
 
     public function confirmJournalist(Request $request, $id)
     {

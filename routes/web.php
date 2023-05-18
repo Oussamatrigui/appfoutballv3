@@ -32,6 +32,10 @@ Route::get('/admin_liste',[AdminController::class,'admin_liste']);
 // Client
 Route::get('/register_client' ,[ClientController::class,'register_client'])->name('adduser');
 Route::post('/saveuser',[ClientController::class,'saveuser']);
+
+Route::get('/delete_user/{id}', [AdminController::class, 'delete_user']);
+Route::get('/delete_client/{id}', [AdminController::class, 'delete_client']);
+
 Route::get('/login_client' ,[ClientController::class,'login_client']);
 Route::post('/verify',[ClientController::class,'verify_login']);
 Route::get('/' ,[ClientController::class,'index']);

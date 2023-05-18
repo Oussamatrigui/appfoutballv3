@@ -13,7 +13,7 @@
 
                             <div class="col-md-12 ftco-animate text-center">
                                 <h1 class="mb-2">{{ $slider->description1 }}</h1>
-                                <h2 class="subheading mb-4">{{ $slider->description }}</h2>
+                                <h2 class="subheading mb-4">{{ $slider->description2 }}</h2>
                                 <p><a href="/shop" class="btn btn-primary">Voir les détails</a></p>
                             </div>
 
@@ -44,15 +44,15 @@
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="#" class="img-prod"><img class="img-fluid"
-                                    src="/storage/content_images/{{ $content->content_image }}" alt="Colorlib Template">
+                                    src="/storage/news_images/{{ $content-> news_image }}" alt="News">
                                 <div class="overlay"></div>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">
-                                <p>{{ $content->titre_article }}</p>
+                                <p>{{ $content-> news_title }}</p>
 
-                                <p><span>auteur:{{ $content->nom_auteur }}</span>
+                                <p><span>auteur:{{ $content-> auteur }}</span>
                                 </p>
-                                <p><a href="{{ url('/article/' . $content->titre_article) }}" class="btn btn-primary">voir
+                                <p><a href="{{ url('/article/' . $content-> news_title) }}" class="btn btn-primary">voir
                                         plus</a></p>
 
 
