@@ -20,6 +20,31 @@ use Session;
 
 class ClientController extends Controller
 {
+
+    public function register_client(){
+
+        return view('client.register');
+
+}
+
+public function saveuser(Request $request){
+        $this->validate($request , 
+                                ['name' => 'required' ,
+                                'email' => 'required|unique:clients|min:5',
+                                'password' => 'required|min:4'
+                                 ]);
+
+        $user = new Client();
+        $user -> name = $request ->input('name');
+        $user -> email = $request ->input('email');
+        $user -> password = bcrypt($request ->input('password'));
+        $user -> save();
+
+        // return back()->with('status' , 'Successfully Registered');
+        return redirect('/login_client')->with('status' , 'Successfully Registered');
+}
+
+
     public function home()
     {
         $sliders = Slider::All()->where('status', 1);

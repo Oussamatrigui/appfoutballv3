@@ -15,9 +15,18 @@ use App\Http\Controllers\NewsController;
 
 // Admin
 
-
 Route::get('/admin', [AdminController::class, 'dash']);
 Route::get('signout', [BackController::class, 'signOut'])->name('signout');
+Route::get('/client_registration',[AdminController::class,'client_registration']);
+Route::get('/client_registration',[AdminController::class,'client_registration']);
+
+// Client
+Route::get('/register_client' ,[ClientController::class,'register_client'])->name('adduser');
+Route::post('/saveuser',[ClientController::class,'saveuser']);
+Route::get('/login_client' ,[ClientController::class,'login_client']);
+Route::post('/verify',[ClientController::class,'verify_login']);
+Route::get('/' ,[ClientController::class,'index']);
+Route::get('/logout' ,[ClientController::class,'logout']);
 // Route::get('/dashboard', function () {
 // return view('admin.dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

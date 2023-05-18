@@ -30,6 +30,12 @@ class AdminController extends Controller
 
 
     }
+
+    public function client_registration(){
+        $client = Client::All();
+
+        return view('admin.client_registration')->with('client', $client);
+    }
     
 
 }
