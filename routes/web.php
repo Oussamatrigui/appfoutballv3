@@ -19,6 +19,9 @@ Route::get('/admin', [AdminController::class, 'dash']);
 Route::get('signout', [BackController::class, 'signOut'])->name('signout');
 Route::get('/client_registration',[AdminController::class,'client_registration']);
 Route::get('/client_registration',[AdminController::class,'client_registration']);
+Route::get('/edit_profile_client/{id}',[AdminController::class,'edit_profile_client']);
+Route::post('/update_profile_client',[AdminController::class,'update_profile_client']);
+Route::get('/admin_liste',[AdminController::class,'admin_liste']);
 
 // Client
 Route::get('/register_client' ,[ClientController::class,'register_client'])->name('adduser');
