@@ -10,6 +10,7 @@ use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\BackController;
+use App\Http\Controllers\NewsController;
 
 
 
@@ -124,3 +125,10 @@ Route::get('/voircommandepdf/{id}', [PdfController::class, 'view_pdf']);
 Route::get('/backoffice',[BackController::class,'login'])->name('backofficce');
 Route::post('custom-login', [BackController::class, 'customLogin'])->name('login.custom');
 
+// News
+Route::get('/newss',[NewsController::class,'news']);
+Route::get('/addnews',[NewsController::class,'addnews']);
+Route::post('/savenews',[NewsController::class,'savenews']);
+Route::get('/edit_news/{id}',[NewsController::class,'edit_news']);
+Route::post('/updatenews',[NewsController::class,'updatenews']);
+Route::get('/delete_news/{id}',[NewsController::class,'delete_news']);
