@@ -6,7 +6,7 @@
 @section('con')
 
 @include('include.admin.admincontentheader')
-<!-- Main content -->
+
 
   <div class="container-fluid">
     <div class="row">
@@ -68,7 +68,7 @@
                 
                 {{-- <input type="number" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter product price" min="1"> --}}
 
-                {{Form::text('product_price', '',['class'=>'form-control','id'=>'example','placeholder'=>'Enter Product price'])}}
+                {{Form::number('product_price', '',['class'=>'form-control','id'=>'example','placeholder'=>'Enter Product price'])}}
               </div>
               <div class="form-group">
                 {{-- <label>Product category</label> --}}
