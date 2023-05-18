@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('auteur');
             $table->string('news_title');
-            $table->string('news_content');
+            $table->longText('news_content');
             $table->string('news_image');
             $table->timestamps();
         });
