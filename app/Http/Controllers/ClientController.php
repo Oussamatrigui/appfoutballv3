@@ -44,7 +44,37 @@ public function saveuser(Request $request){
         return redirect('/login_client')->with('status' , 'Successfully Registered');
 }
 
+public function login_client(){
+    return view('client.login_client');
+}
 
+public function verify_login(Request $request){
+
+    $this->validate($request , 
+                                 [
+                                 'email' => 'required',
+                                 'password' => 'required'
+                                  ]);
+     
+     $client = Client::where('email', $request->input('email'))->first();
+     
+     if ($client) {
+         # code...
+         if (Hash::check($request->input('password'), $client-> password)) {
+             # code...
+             Session::put('client', $client);
+             return redirect('/shop');
+         } else {
+             return back()->with('status','Mot de passe incorrecte');
+         }
+         
+     } else {
+         return back()->with('status','Pas de compte avec cette email');
+     }
+     
+
+     // return view('client.login_client');
+ }
     public function home()
     {
         $sliders = Slider::All()->where('status', 1);
