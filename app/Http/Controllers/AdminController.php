@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('role:admin');
+    }
+
+    
     public function dash(){
         $nombreClients = Client::count();
         $nombreUser = User::count();
