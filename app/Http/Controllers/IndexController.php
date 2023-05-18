@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Models\Slider;
+<<<<<<< HEAD
 use Illuminate\support\Facades\Mail;
 use App\http\Requests\ContactRequest;
 use App\Mail\ContactMessageCreated;
 
+=======
+use App\Models\News;
+>>>>>>> a81a4b773f260d013f6f01d6328ac52b3447379d
 
 
 
@@ -17,11 +21,11 @@ class IndexController extends Controller
     //
     public function index(){
         $sliders = Slider::All()->where('status', 1);
-        $contents = Content::All();
+        $contents = News::All();
         return view('client.index')->with('contents', $contents)->with('sliders', $sliders);
     }
     public function news(){
-        $contents = Content::All();
+        $contents = News::All();
         return view('client.news')->with('contents', $contents);
     }
     public function article($titre){

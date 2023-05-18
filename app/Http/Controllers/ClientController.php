@@ -15,11 +15,96 @@ use App\Mail\SendMail;
 use App\Cart;
 use Stripe\Charge;
 use Stripe\Stripe;
+use App\Models\User;
 use Session;
 
 
 class ClientController extends Controller
 {
+
+    public function register_client(){
+
+        return view('client.register');
+
+}
+
+public function saveuser(Request $request){
+        $this->validate($request , 
+                                ['name' => 'nullable' ,
+                                'email' => 'required|unique:clients|min:5',
+                                'password' => 'required|min:4'
+                                 ]);
+
+        $user = new Client();
+        $user -> name = $request ->input('name');
+        $user -> email = $request ->input('email');
+        $user -> password = bcrypt($request ->input('password'));
+        $user -> save();
+
+        // return back()->with('status' , 'Successfully Registered');
+        return redirect('/login_client')->with('status' , 'Successfully Registered');
+}
+
+public function login_client(){
+    return view('client.login_client');
+}
+
+public function verify_login(Request $request){
+
+    $this->validate($request , 
+                                 [
+                                 'email' => 'required',
+                                 'password' => 'required'
+                                  ]);
+     
+     $client = Client::where('email', $request->input('email'))->first();
+     
+     if ($client) {
+         # code...
+         if (Hash::check($request->input('password'), $client-> password)) {
+             # code...
+             Session::put('client', $client);
+             return redirect('/shop');
+         } else {
+             return back()->with('status','Mot de passe incorrecte');
+         }
+         
+     } else {
+         return back()->with('status','Pas de compte avec cette email');
+     }
+     
+
+     // return view('client.login_client');
+ }
+
+
+ public function register_journalist(){
+    return view('register_journaliste');
+}
+
+
+public function journalistRegister(Request $request)
+{
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:8',
+    ]);
+
+    $user = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role' => 'journalist',
+        'is_confirmed' => false,
+    ]);
+
+    return redirect('register_journalist')->with('status', 'Votre demande d\'inscription a été envoyée. Veuillez attendre la confirmation de l\'administrateur.');
+}
+
+
+
+
     public function home()
     {
         $sliders = Slider::All()->where('status', 1);

@@ -1,29 +1,12 @@
-@extends('admin_layout.admin')
+@extends('admin_layout.layout')
 @section('title')
   Edit product
 @endsection
-@section('content')
+@section('con')
      <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Product</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Product</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
+     @include('include.admin.admincontentheader')
+
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
@@ -63,7 +46,7 @@
                   <div class="form-group">
                     {{--<label for="exampleInputEmail1">Product price</label>
                     <input type="number" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter product price" min="1">--}}
-                    {{Form::label('', 'product price', ['for' => 'exempleInputEmail1'])}}
+                    {{Form::label('', 'Product price', ['for' => 'exempleInputEmail1'])}}
                     {{Form::text('product_price', $product->product_price, ['class' => 'form-control', 'id' => 'exempleInputEmail1', 'placeholder' =>'Entrer product price'])}}
                   </div>
                   <div class="form-group">

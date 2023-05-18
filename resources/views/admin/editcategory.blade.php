@@ -8,17 +8,18 @@
     <!-- Content Wrapper. Contains page content -->
     
     @include('include.admin.admincontentheader')    
+    <!-- Main content -->
 
-   
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-12">
-                        <!-- jquery validation -->
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3>@yield('title')</h3>
-                            </div>
+    <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">@yield('title')</h3>
+              </div>
+              <br><br>
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <ul>

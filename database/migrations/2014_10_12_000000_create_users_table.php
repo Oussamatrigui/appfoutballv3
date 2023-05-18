@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             // $table->enum('role', ['admin', 'journalist'])->default('journaliste');
-            $table->enum('role', ['admin', 'journalist']);
+            $table->enum('role', ['admin', 'journalist'])->default('journalist');
             $table->boolean('is_confirmed')->default(false);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

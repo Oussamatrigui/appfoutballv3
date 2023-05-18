@@ -14,26 +14,33 @@ use App\Http\Controllers\BackController;
 use App\Http\Controllers\NewsController;
 
 
-
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-
 // Admin
-
 
 Route::get('/admin', [AdminController::class, 'dash']);
 Route::get('signout', [BackController::class, 'signOut'])->name('signout');
+Route::get('/client_registration',[AdminController::class,'client_registration']);
+Route::get('/edit_profile_admin/{id}',[AdminController::class,'edit_profile_admin']);
+Route::post('/update_profile_admin',[AdminController::class,'update_profile_admin']);
+
+Route::get('/register_journalist', [ClientController::class, 'register_journalist']);
+Route::post('/journalist-register', [ClientController::class, 'journalistRegister']);
+Route::patch('/journalist-confirm/{id}', [AdminController::class, 'confirmJournalist'])->name('journalist.confirm');
+Route::patch('/journalist-desactiver/{id}', [AdminController::class, 'desactiver_Journalist'])->name('journalist.desactiver');
+Route::get('/edit_profile_client/{id}',[AdminController::class,'edit_profile_client']);
+Route::post('/update_profile_client',[AdminController::class,'update_profile_client']);
+Route::get('/admin_liste',[AdminController::class,'admin_liste']);
+
+// Client
+Route::get('/register_client' ,[ClientController::class,'register_client'])->name('adduser');
+Route::post('/saveuser',[ClientController::class,'saveuser']);
+
+Route::get('/delete_user/{id}', [AdminController::class, 'delete_user']);
+Route::get('/delete_client/{id}', [AdminController::class, 'delete_client']);
+
+Route::get('/login_client' ,[ClientController::class,'login_client']);
+Route::post('/verify',[ClientController::class,'verify_login']);
+Route::get('/' ,[ClientController::class,'index']);
+Route::get('/logout' ,[ClientController::class,'logout']);
 // Route::get('/dashboard', function () {
 // return view('admin.dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -56,7 +63,7 @@ Route::post('/modifier_quant/{id}', [ClientController::class, 'modifier_quant'])
 Route::get('/suppdupanier/{id}', [ClientController::class, 'suppdupanier']);
 Route::post('/creer_compte', [ClientController::class, 'creer_compte']);
 Route::post('/acceder_compte',[ClientController::class, 'acceder_compte']);
-Route::get('/logout',[ClientController::class, 'logout']);
+
 Route::post('/payer',[ClientController::class, 'payer']);
 Route::get('/detait', [ClientController::class, 'detait']);
 

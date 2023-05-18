@@ -1,6 +1,6 @@
 @extends('client.client_layout.client')
 @section('title')
-    Home
+    Home | | | Shop
 @endsection
 
 @section('content')
