@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+{{-- <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
     
     <a class="navbar-brand" href="{{url('/')}}"> 
@@ -39,4 +39,6 @@
         </ul>
     </div>
     </div>
-</nav>
+</nav> --}}
+
+@include('include.indexheader')

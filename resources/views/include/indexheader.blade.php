@@ -9,16 +9,19 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {{ request()->is('/') ? 'cta cta-colored' : '' }}"><a href="{{ url('/') }}"
-                        class="nav-link">home</a></li>
-                <li class="nav-item "><a href="/home" target="_blan" class="nav-link">shop</a></li>
-                <li class="nav-item {{ request()->is('/news') ? 'cta cta-colored' : '' }}"><a href="{{ url('/news') }}"
-                        class="nav-link">news</a></li>
-                <li class="nav-item {{ request()->is('/contact') ? 'cta cta-colored' : '' }}"><a
-                        href="{{ url('/contact') }}" class="nav-link">contactez-nous</a></li>
-
-
-
-
+                        class="nav-link">home</a>
+                </li>
+                <li class="nav-item {{ request()->is('/home') ? 'cta cta-colored' : '' }}">
+                    <a href="/home" target="_blan" class="nav-link">shop</a>
+                </li>
+                <li class="nav-item {{ request()->is('/news') ? 'cta cta-colored' : '' }}">
+                    <a href="{{ url('/news') }}"
+                        class="nav-link">news
+                    </a>
+                </li>
+                <li class="nav-item {{ request()->is('/contact') ? 'cta cta-colored' : '' }}">
+                    <a href="{{ url('/contact') }}" class="nav-link">contactez-nous</a>
+                </li>
             </ul>
         </div>
     </div>
