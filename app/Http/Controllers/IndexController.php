@@ -25,14 +25,16 @@ class IndexController extends Controller
         return view('client.news')->with('contents', $contents);
     }
     public function article($titre){
-        $newss = News::All();
+
+        
+        $latestNews = News::latest()->take(3)->get();
         $contents = News::where([
           
             ['news_title','LIKE','%'.$titre.'%']
         ])
         ->get(); 
         
-        return view('client.article')->with('contents', $contents)->with('newss', $newss);
+        return view('client.article', compact('latestNews'))->with('contents', $contents);
     }
     public function create(){
         return view('client.contact');
