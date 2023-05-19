@@ -61,6 +61,7 @@ class NewsController extends Controller
             $news -> news_title = $request ->input('news_title');
             $news -> news_content = $request ->input('news_content');
             $news -> news_image = $fileNameToStore;
+            $news->status = 1;
             $news -> save();
     
             return back()->with('status' , 'News enregistré avec succées');
@@ -106,5 +107,18 @@ class NewsController extends Controller
         $news -> delete();
 
         return back()->with('status' , 'News Supprimer avec succees');
+    }
+
+    public function activer_news($id){
+        $news = News::find($id);
+        $news->status = 1;
+        $news->update();
+        return back();
+    }
+    public function desactiver_news($id){
+        $news = News::find($id);
+        $news->status = 0;
+        $news->update();
+        return back();
     }
 }

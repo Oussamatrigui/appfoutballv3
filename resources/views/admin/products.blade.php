@@ -52,7 +52,7 @@
                       <td>{{'$ '.$product->product_price}}</td>
                       <td>
                         @if ($product->status != 0)
-                            <a href="{{url('/desactiver_product/'.$product->id)}}" class="btn btn-success">Déactiver</a>
+                            <a href="{{url('/desactiver_product/'.$product->id)}}" class="btn btn-success">Desactiver</a>
                         @else
                             <a href="{{url('/activer_product/'.$product->id)}}" class="btn btn-warning">Activer</a>
                         @endif
