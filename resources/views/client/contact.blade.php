@@ -22,48 +22,47 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 ftco-animate">
-                    <form action="{{ url('/enregistrer') }}" method="POST" class="billing-form">
-                        <h3 class="mb-4 billing-heading">Contactez-nous</h3>
+                    @if (Session::has('status'))
+                        <div class="alert alert-succes">
+                            {{ Session::get('status') }}
+                    @endif
+                    <form action="{{ url('/contact') }}" method="POST" class="billing-form" novalidate>
+                        {{ csrf_field() }}
+
                         <div class="row align-items-end">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="firstname">Nom</label>
-                                    <input type="text" class="form-control" name="name">
+                            <h3 class="mb-4 billing-heading">Contactez-nous</h3>
+                            <div class="row align-items-end">
+                                <div class="col-md-12 {{ $errors->has('name') ? 'has-error' : '' }}">
+                                    <div class="form-group">
+                                        <label for="name" class=>name</label>
+                                        <input type="text" class="form-control" id="card-name" name="name">
+                                        {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lastname">Prénom</label>
-                                    <input type="text" class="form-control" name="address">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lastname">E-mail</label>
-                                    <input type="text" class="form-control" id="card-name" name="card_name">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lastname">Sujet</label>
-                                    <input type="text" class="form-control" id="card-name" name="card_name">
-                                </div>
-                            </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="email">email</label>
+                                        <input type="text" class="form-control" id="card-name" name="email">
+                                        {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lastname">Message</label>
-                                    <textarea class="form-control" id="card-number" rows="10" cols="50">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="msg">message</label>
+                                        <textarea class="form-control" id="card-number" rows="10" cols="50" name="msg">
                                     </textarea>
-                                </div>
-                            </div>
+                                        {!! $errors->first('msg', '<span class="help-block">:message</span>') !!}
 
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary" value="Envoyer">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary" value="Envoyer">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </form><!-- END -->
                 </div>
             </div>

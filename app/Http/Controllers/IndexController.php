@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Models\Slider;
+use Illuminate\support\Facades\Mail;
+use App\http\Requests\ContactRequest;
+use App\Mail\ContactMessageCreated;
+
+
 use App\Models\News;
 
 class IndexController extends Controller
@@ -29,11 +34,23 @@ class IndexController extends Controller
         
         return view('client.article')->with('contents', $contents)->with('newss', $newss);
     }
-    public function contact(){
+    public function create(){
         return view('client.contact');
     }
-    public function savecontact(){
-        
-    }
    
+    public function store(request $request)
+    {
+        $mailable = new ContactMessageCreated($request->name, $request->email, $request->msg);
+        Mail::to('hello@examp')->send($mailable);
+
+     /*  $this->validate($request,[
+        'name'=>'required|min:3',
+        'email'=>'required|min:3',
+        'sujet'=>'required|min:3',
+        'message'=>'required|min:3',
+
+      ]);*/
+      return redirect('/contact')->with('status', 'le message a été envoyer avec succès !!!');    }
+    
+ 
 }

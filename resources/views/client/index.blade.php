@@ -26,7 +26,85 @@
 
         </div>
     </section>
-   
+    <section class="resultat">
+        <h1>Résultats des matchs</h1>
+        
+        
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Équipe domicile</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Équipe visiteur</th>
+                    <th>Résultat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img class="team-logo" src="images/cot.png" alt="Logo équipe 1">
+                        <br>
+                        Équipe 1
+                    </td>
+                    <td>15 mai 2023</td>
+                    <td>18:00</td>
+                    <td>
+                        <img class="team-logo" src="images/tun.png" alt="Logo équipe 2">
+                        <br>
+                        Équipe 2
+                    </td>
+                    <td>3 - 2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="team-logo" src="images/cam.png" alt="Logo équipe 3">
+                        <br>
+                        Équipe 3
+                    </td>
+                    <td>20 mai 2023</td>
+                    <td>20:30</td>
+                    <td>
+                        <img class="team-logo" src="images/cot.png" alt="Logo équipe 4">
+                        <br>
+                        Équipe 4
+                    </td>
+                    <td>1 - 1</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="resultat">
+        <h1>Prochain match</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Équipe domicile</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Équipe visiteur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img class="team-logo" src="logo_equipe5.png" alt="Logo équipe 5">
+                        <br>
+                        Équipe 5
+                    </td>
+                    <td>25 mai 2023</td>
+                    <td>19:00</td>
+                    <td>
+                        <img class="team-logo" src="logo_equipe6.png" alt="Logo équipe 6">
+                        <br>
+                        Équipe 6
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
 
 
@@ -44,15 +122,15 @@
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
                             <a href="#" class="img-prod"><img class="img-fluid"
-                                    src="/storage/news_images/{{ $content-> news_image }}" alt="News">
+                                    src="/storage/news_images/{{ $content->news_image }}" alt="News">
                                 <div class="overlay"></div>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">
-                                <p>{{ $content-> news_title }}</p>
+                                <p>{{ $content->news_title }}</p>
 
-                                <p><span>auteur:{{ $content-> auteur }}</span>
+                                <p><span>auteur:{{ $content->auteur }}</span>
                                 </p>
-                                <p><a href="{{ url('/article/' . $content-> news_title) }}" class="btn btn-primary">voir
+                                <p><a href="{{ url('/article/' . $content->news_title) }}" class="btn btn-primary">voir
                                         plus</a></p>
 
 
@@ -120,7 +198,7 @@
                     <h2 class="mb-4">N'hésiter pas à réserver les produits des élèphants</h2>
                     <p class="paragraph">Vous trouverez ci-dessous tous les types et les tailles de produits de l'equipe
                         national ivoirienne</p>
-                    <p><a href="{{ url('/home') }}" class="btn btn-primary">Decouvrir</a></p>
+                    <p><a href="{{ url('/home') }}" target="_blan" class="btn btn-primary">Decouvrir</a></p>
                     <span class="price"> <a href="#">10% de réduction</a></span>
 
                 </div>
@@ -228,8 +306,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm ftco-animate">
-                    <a href="https://www.cafonline.com/" class="partner"><img src="images/images-(5).jpg" class="img-fluid"
-                            alt="Colorlib Template"></a>
+                    <a href="https://www.cafonline.com/" class="partner"><img src="images/images-(5).jpg"
+                            class="img-fluid" alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
                     <a href="https://www.fifa.com/fr" class="partner"><img src="images/FIFA-Logo.jpg" class="img-fluid"
