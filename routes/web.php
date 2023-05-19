@@ -83,9 +83,7 @@ Route::get('/news',[IndexController::class,'news']);
 Route::get('/select_par_cat/{category_name}', [productController::class, 'select_par_cat']);
 Route::get('/contact',[IndexController::class,'create']);
 Route::post('/contact',[IndexController::class,'store']);
-Route::get('/test', function(){
-    return  new ContactMessageCreated('ouss', 'oussama@gmail.com', 'messa');
-});
+
 
 
 
