@@ -139,3 +139,6 @@ Route::post('/savenews',[NewsController::class,'savenews']);
 Route::get('/edit_news/{id}',[NewsController::class,'edit_news']);
 Route::post('/updatenews',[NewsController::class,'updatenews']);
 Route::get('/delete_news/{id}',[NewsController::class,'delete_news']);
+
+Route::get('/activer_news/{id}', [NewsController::class, 'activer_news']);
+Route::get('/desactiver_news/{id}', [NewsController::class, 'desactiver_news']);

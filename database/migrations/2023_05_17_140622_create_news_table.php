@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('news_title');
             $table->longText('news_content');
             $table->string('news_image');
+            $table->integer('status');
             $table->timestamps();
         });
     }
