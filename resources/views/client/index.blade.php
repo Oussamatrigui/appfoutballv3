@@ -90,14 +90,14 @@
             <tbody>
                 <tr>
                     <td>
-                        <img class="team-logo" src="logo_equipe5.png" alt="Logo équipe 5">
+                        <img class="team-logo" src="images/cot.png" alt="Logo équipe 5">
                         <br>
                         Équipe 5
                     </td>
                     <td>25 mai 2023</td>
                     <td>19:00</td>
                     <td>
-                        <img class="team-logo" src="logo_equipe6.png" alt="Logo équipe 6">
+                        <img class="team-logo" src="images/Nigeria.png" alt="Logo équipe 6">
                         <br>
                         Équipe 6
                     </td>
