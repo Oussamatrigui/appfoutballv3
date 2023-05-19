@@ -2,13 +2,13 @@
 @section('title')
     FIF | | | News | | |
 @endsection
-
-
 @section('newsdetail')
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
         <link href="http://wael-toumi.me/social_share_button.css" rel="stylesheet">
         <link href="http://wael-toumi.me/word-wrap.css" rel="stylesheet">
+
+        
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
@@ -36,7 +36,7 @@
             <!-- Popular News Start -->
             <div class="mb-3">
                 <div class="section-title mb-0">
-                    <h4 class="m-0 text-uppercase font-weight-bold">Lastest News</h4>
+                    <h4 class="m-0 text-uppercase font-weight-bold">Latest News</h4>
                 </div>
                 <div class="bg-white border border-top-0 p-3">
                  
