@@ -7,8 +7,6 @@ use App\Models\Content;
 use App\Models\Slider;
 use App\Models\News;
 
-
-
 class IndexController extends Controller
 {
     //
@@ -22,15 +20,14 @@ class IndexController extends Controller
         return view('client.news')->with('contents', $contents);
     }
     public function article($titre){
-        
-        
-        $contents = Content::where([
+        $newss = News::All();
+        $contents = News::where([
           
-            ['titre_article','LIKE','%'.$titre.'%']
+            ['news_title','LIKE','%'.$titre.'%']
         ])
         ->get(); 
         
-        return view('client.article')->with('contents', $contents);
+        return view('client.article')->with('contents', $contents)->with('newss', $newss);
     }
     public function contact(){
         return view('client.contact');
