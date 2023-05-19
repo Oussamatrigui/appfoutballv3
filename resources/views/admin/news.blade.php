@@ -61,7 +61,13 @@
                                         <td> {{ $news -> news_title }} </td>
                                         <td> {{ $news -> news_content }} </td>
                                         <td>
-                                          <a href="#" class="btn btn-success">Unactivate</a>
+
+                                          @if ($news->status != 0)
+                                            <a href="{{url('/desactiver_news/'.$news->id)}}" class="btn btn-success">Desactiver</a>
+                                          @else
+                                            <a href="{{url('/activer_news/'.$news->id)}}" class="btn btn-warning">Activer</a>
+                                          @endif
+                                          
                                           <a href="{{url('/edit_news/'.$news->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
                                           <a href="{{url('/delete_news/'.$news->id)}}" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
                                         </td>
