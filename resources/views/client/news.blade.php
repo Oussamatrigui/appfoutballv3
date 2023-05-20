@@ -52,7 +52,7 @@ News | | | FIF | | | Equipe Nationale de Cote d-ivoire
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                             href="{{url('/article/'.$content-> news_title)}}">{{ $content-> auteur}}</a>
-                            <a class="text-white" href="{{url('/article/'.$content->news_title)}}"><small>{{ $content-> created_at}}</small></a>
+                            <a class="text-white" href="{{url('/article/'.$content->news_title)}}"><small>{{ $content-> created_at->diffForHumans()}}</small></a>
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{ $content-> news_title}}</a>
                     </div>

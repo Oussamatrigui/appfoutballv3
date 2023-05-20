@@ -78,7 +78,8 @@ Route::get('/desactiver_content/{id}', [ContentController::class, 'desactiver_co
 
 
 Route::get('/',[IndexController::class,'index']);
-Route::get('/article/{titre}',[IndexController::class,'article']);
+Route::get('/article/{titre}',[IndexController::class,'article1']);
+Route::get('/article1/{titre}',[IndexController::class,'article1']);
 Route::get('/news',[IndexController::class,'news']);
 Route::get('/select_par_cat/{category_name}', [productController::class, 'select_par_cat']);
 Route::get('/contact',[IndexController::class,'create']);
