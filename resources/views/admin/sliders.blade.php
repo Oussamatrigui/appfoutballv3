@@ -37,6 +37,7 @@
                                             <th>Picture</th>
                                             <th>Description one</th>
                                             <th>Description Two</th>
+                                            <th>Created at</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -52,10 +53,11 @@
                                                 <td>{{ $slider->description1 }}
                                                 </td>
                                                 <td>{{ $slider->description2 }}</td>
+                                                <td>{{ $slider->created_at }}</td>
                                                 <td>
                                                     @if ($slider->status != 0)
                                                         <a href="{{ url('/desactiver_slider/' . $slider->id) }}"
-                                                            class="btn btn-success">Déactiver</a>
+                                                            class="btn btn-success">Desactiver</a>
                                                     @else
                                                         <a href="{{ url('/activer_slider/' . $slider->id) }}"
                                                             class="btn btn-warning">Activer</a>

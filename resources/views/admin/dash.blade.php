@@ -20,6 +20,9 @@
         <link rel="stylesheet" href="{{asset('admin_back/plugins/daterangepicker/daterangepicker.css')}}">
         <!-- summernote -->
         <link rel="stylesheet" href="{{asset('admin_back/plugins/summernote/summernote-bs4.min.css')}}">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 @endsection
 
 @section('con')
@@ -46,7 +49,7 @@
             </div>
                        
             <div class="container-fluid">
-                <div class="row">
+                
                     <section class="col-lg-11">
                         <h4>Demande d'inscription des journalistes :</h4><br>
                         
@@ -61,8 +64,8 @@
                                 </div>
                             @endif
                         
-                    
-                            <table class="table">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Nom</th>
@@ -110,11 +113,11 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
+                        </div>
                             
                                   
                     </section>
-                </div>
+               
             </div>
                     <div class="container-fluid">
                         <div class="row">               
@@ -130,6 +133,12 @@
             
 @endsection
         @section('dashboardscript')
+
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
                 <script src="{{ asset('js/app.js') }}"></script>
             <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
                 <script src="{{asset('admin_back/plugins/jquery-ui/jquery-ui.min.js')}}"></script>

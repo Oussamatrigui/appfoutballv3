@@ -49,8 +49,12 @@
               <div class="form-group">
 
                 {{Form::hidden('id' , $news -> id )}}
-                {{Form::label('', 'Auteur',['for'=>'example'])}}
+
+                {{Form::label('', 'Author name',['for'=>'example'])}}
+
                 {{Form::text('auteur', $news->auteur ,['class'=>'form-control','id'=>'example','placeholder'=>'Enter Autor name'])}}
+
+                {{-- {{Form::select('auteur', $news->auteur , null , ['placeholder'=>'Select author name' , 'class' => 'form-control select2'] )}} --}}
               </div>
               <div class="form-group">
             
