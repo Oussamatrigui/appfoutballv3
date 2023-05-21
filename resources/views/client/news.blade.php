@@ -36,17 +36,17 @@ News | | | FIF | | | Equipe Nationale de Cote d-ivoire
             </div>
 
 <!-- Featured News Slider Start -->
-<div class="container-fluid pt-5 mb-3">
+<div class="container-fluid pt-5 mb-3 ftco-animate">
     <div class="container">
         <div class="section-title">
-            <h4 class="m-0 text-uppercase font-weight-bold">Most Viewed</h4>
+            <h4 class="col-md-12 heading-section ftco-animate font-weight-bold">Most Viewed</h4>
             
         </div>
         <div class="owl-carousel news-carousel carousel-item-4 position-relative">
 
             @foreach ($contents as $content)
 
-                <div class="position-relative overflow-hidden" style="height: 300px;">
+                <div class="position-relative overflow-hidden ftco-animate" style="height: 300px;">
                     <img class="img-fluid h-100" src="/storage/news_images/{{ $content-> news_image}}" style="object-fit: cover;">
                     <div class="overlay">
                         <div class="mb-2">

@@ -1,4 +1,4 @@
-@extends('client_layout.client')
+@extends('client_layout.layout')
 @section('title')
     FIF | | | News | | | Equipe Nationale de la cote d'ivoire
 @endsection
@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="http://wael-toumi.me/social_share_button.css" rel="stylesheet">
     <link href="http://wael-toumi.me/word-wrap.css" rel="stylesheet">
-    <link href="http://wael-toumi.me/responsive.css" rel="stylesheet">
+    
     
     <div class="container-fluid mt-5 mb-3 pt-3">
         <div class="container">
@@ -33,15 +33,15 @@
 
                     @foreach ($contents as $content)
                     <div class="position-relative mb-3">
-                        <img class="img-fluid w-100" src="/storage/news_images/{{ $content-> news_image}}" style="object-fit: cover;">
+                        <img class="img-fluid w-100 ftco-animate" src="/storage/news_images/{{ $content-> news_image}}" style="object-fit: cover;">
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-3">
-                                <a class="badge badge-success text-uppercase font-weight-semi-bold p-2 mr-2"
+                                <a class="badge badge-success text-uppercase font-weight-semi-bold p-2 mr-2 ftco-animate"
                                     href="">{{ $content->auteur}}</a>
-                                <a class="text-body">{{ $content-> created_at->diffForHumans()}}</a>
+                                <a class="text-body ftco-animate">{{ $content-> created_at->diffForHumans()}}</a>
                             </div>
-                            <h4 class="mb-3 text-secondary text-uppercase font-weight-bold">{{ $content-> news_title}}</h4>
-                            <div class='word-wrap'> {{ $content-> news_content}} </div>
+                            <h4 class="mb-3 text-secondary text-uppercase font-weight-bold ftco-animate">{{ $content-> news_title}}</h4>
+                            <div class='word-wrap ftco-animate'> {{ $content-> news_content}} </div>
                         </div>
                         <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                             <div class="d-flex align-items-center">
@@ -60,19 +60,19 @@
                     <!-- Comment List Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">1 Comments</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold ftco-animate">1 Comments</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-4">
                             <div class="media mb-4">
                                 {{-- <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;"> --}}
                                 <div class="media-body">
                                     <h6>
-                                        <a class="text-secondary font-weight-bold" href="">John Doe
+                                        <a class="text-secondary font-weight-bold ftco-animate" href="">John Doe
                                         </a> 
                                         <small><i>01 Jan 2045</i></small>
                                     </h6>
                                     <p>comment</p>
-                                    <button class="btn btn-sm btn-outline-secondary">
+                                    <button class="btn btn-sm btn-outline-secondary ftco-animate">
                                         Reply
                                     </button>
                                 </div>
@@ -85,7 +85,7 @@
                     <!-- Comment Form Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Leave a comment</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold ftco-animate">Leave a comment</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-4">
                             <form>
@@ -127,7 +127,7 @@
                     
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase">Latest News</h4>
+                            <h4 class="m-0 text-uppercase ftco-animate">Latest News</h4>
                         </div>
                         
                         <div class="bg-white border border-top-0 p-3">
@@ -135,15 +135,15 @@
                             @foreach ($latestNews as $latestNews)
                            
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="/storage/news_images/{{ $latestNews-> news_image}}" alt="" style="width:110px;height:110px;">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <img class="img-fluid ftco-animate" src="/storage/news_images/{{ $latestNews-> news_image}}" alt="" style="width:110px;height:110px;">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0 ftco-animate">
                                     <div class="mb-2">
                                         <a class="badge badge-success text-uppercase font-weight-semi-bold p-1 mr-2" href="{{url('/article/'.$latestNews->news_title)}}">{{ $latestNews-> auteur}}</a>
                                         <a class="text-body" href="">
                                             <small>{{ $latestNews-> created_at->diffForHumans()}}</small>
                                         </a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $latestNews-> news_title}}</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold ftco-animate" href="">{{ $latestNews-> news_title}}</a>
                                 </div>
                             </div>
                             @endforeach
