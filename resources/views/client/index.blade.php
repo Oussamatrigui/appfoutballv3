@@ -90,7 +90,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <img class="team-logo" src="images/cot.png" alt="Logo équipe 5">
+                        <img class="team-logo" src="images/gcot.png" alt="Logo équipe 5">
                         <br>
                         Équipe 5
                     </td>

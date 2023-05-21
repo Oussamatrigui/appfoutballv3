@@ -12,6 +12,8 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ResultController;
+
 
 
 // Admin
@@ -146,3 +148,8 @@ Route::get('/delete_news/{id}',[NewsController::class,'delete_news']);
 
 Route::get('/activer_news/{id}', [NewsController::class, 'activer_news']);
 Route::get('/desactiver_news/{id}', [NewsController::class, 'desactiver_news']);
+Route::get('/addresult', [ResultController::class, 'addresult']);
+Route::post('/saveresult', [ResultController::class, 'saveresult']);
+Route::get('/results', [ResultController::class, 'results']);
+
+
