@@ -12,12 +12,12 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\NewsController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\ResultController;
 
-=======
+
 use App\Http\Controllers\JournalistController;
->>>>>>> a5e4f81df2d44905a523ce6538aa145e346f2c24
+
 
 
 // Admin
