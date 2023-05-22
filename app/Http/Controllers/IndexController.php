@@ -8,6 +8,7 @@ use App\Models\Slider;
 use Illuminate\support\Facades\Mail;
 use App\http\Requests\ContactRequest;
 use App\Mail\ContactMessageCreated;
+use Carbon\Carbon;
 
 
 use App\Models\News;
@@ -15,6 +16,18 @@ use App\Models\News;
 class IndexController extends Controller
 {
     //
+
+    public function article1($titre){
+        $latestNews = News::latest()->take(3)->get();
+        $contents = News::where([
+          
+            ['news_title','LIKE','%'.$titre.'%']
+        ])
+        ->get(); 
+        
+        return view('client.article1', compact('latestNews'))->with('contents', $contents);
+        
+    }
     public function index(){
         $sliders = Slider::All()->where('status', 1);
         $contents = News::All();
