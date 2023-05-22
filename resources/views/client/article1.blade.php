@@ -32,95 +32,136 @@
                     <!-- News Detail Start -->
 
                     @foreach ($contents as $content)
-                    <div class="position-relative mb-3">
-                        <img class="img-fluid w-100 ftco-animate" src="/storage/news_images/{{ $content-> news_image}}" style="object-fit: cover;">
-                        <div class="bg-white border border-top-0 p-4">
-                            <div class="mb-3">
-                                <a class="badge badge-success text-uppercase font-weight-semi-bold p-2 mr-2 ftco-animate"
-                                    href="">{{ $content->auteur}}</a>
-                                <a class="text-body ftco-animate">{{ $content-> created_at->diffForHumans()}}</a>
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100 ftco-animate" src="/storage/news_images/{{ $content-> news_image}}" style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-3">
+                                    <a class="badge badge-success text-uppercase font-weight-semi-bold p-2 mr-2 ftco-animate"
+                                        href="">
+                                        {{ $content->auteur}}
+                                    </a>
+                                    <a class="text-body ftco-animate">
+                                        {{ $content-> created_at->diffForHumans()}}
+                                    </a>
+                                </div>
+                                <h4 class="mb-3 text-secondary text-uppercase font-weight-bold ftco-animate">
+                                    {{ $content-> news_title}}
+                                </h4>
+                                <div class='word-wrap ftco-animate'> 
+                                    {{ $content-> news_content}} 
+                                </div>
                             </div>
-                            <h4 class="mb-3 text-secondary text-uppercase font-weight-bold ftco-animate">{{ $content-> news_title}}</h4>
-                            <div class='word-wrap ftco-animate'> {{ $content-> news_content}} </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    {{-- <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                    <span>John Doe</span> --}}
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    {{-- <span class="ml-3"><i class="far fa-eye mr-2"></i>12345</span>
+                                    <span class="ml-3"><i class="far fa-comment mr-2"></i>123</span> --}}
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
-                            <div class="d-flex align-items-center">
-                                {{-- <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
-                                <span>John Doe</span> --}}
-                            </div>
-                            <div class="d-flex align-items-center">
-                                {{-- <span class="ml-3"><i class="far fa-eye mr-2"></i>12345</span>
-                                <span class="ml-3"><i class="far fa-comment mr-2"></i>123</span> --}}
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
+                    
                     <!-- News Detail End -->
 
                     <!-- Comment List Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold ftco-animate">1 Comments</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold ftco-animate">Recent Comments ({{ $content->comments_count }}):</h4>
                         </div>
-                        <div class="bg-white border border-top-0 p-4">
-                            <div class="media mb-4">
-                                {{-- <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;"> --}}
-                                <div class="media-body">
-                                    <h6>
-                                        <a class="text-secondary font-weight-bold ftco-animate" href="">John Doe
-                                        </a> 
-                                        <small><i>01 Jan 2045</i></small>
-                                    </h6>
-                                    <p>comment</p>
-                                    <button class="btn btn-sm btn-outline-secondary ftco-animate">
-                                        Reply
-                                    </button>
+                        @if (isset($comments[$content->id]))
+                            @foreach ($comments[$content->id] as $comment)
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="media mb-4">
+                                        <div class="media-body">
+                                            <h6>
+                                                <a class="text-secondary font-weight-bold ftco-animate" href="">{{ $comment->name }}
+                                                </a> 
+                                                <small>
+                                                    <i>
+                                                        {{$comment->created_at->diffForHumans()}}
+                                                    </i>
+                                                </small>
+                                            </h6>
+                                            <p>
+                                                {{ $comment->message }}</p>     
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                     <!-- Comment List End -->
-
+                    @if (count($errors) > 0 )
+                    
+                                      <div class="alert alert-danger">
+                                          <ul>
+                                              @foreach ($errors->all() as $error)
+                                                  <li> {{ $error }} </li>
+                                              @endforeach
+                                          </ul>
+                                          
+                                      </div>
+                            
+                    @endif
+          
+                    @if (Session::has('status'))
+                    <div class="row align-items-center justify-content-center">
+                        <div class="container-fluid ">
+                            <div class="col-md-12 text-center alert alert-success ">
+                            {{Session::get('status')}}
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <!-- Comment Form Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
                             <h4 class="m-0 text-uppercase font-weight-bold ftco-animate">Leave a comment</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-4">
-                            <form>
+                            {!!Form::open(['action'=> 'App\Http\Controllers\IndexController@save_comment', 'method' => 'POST' , 'enctype' => 'multipart/form-data'])!!}
+                            {{ csrf_field() }}
+                            <input type="hidden" name="news_id" value="{{ $content->id }}">
                                 <div class="form-row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="name">Name *</label>
-                                            <input type="text" class="form-control" id="name">
+                                            
+                                            {{Form::label('', 'Name *',['for'=>'example'])}}
+                                            
+                                            {{Form::text('name', '',['class'=>'form-control','id'=>'name','placeholder'=>''])}}
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="email">Email *</label>
-                                            <input type="email" class="form-control" id="email">
+                                           
+                                            {{Form::label('', 'Email *',['for'=>'email'])}}
+                                            
+                                            {{Form::text('email', '',['class'=>'form-control','id'=>'email','placeholder'=>''])}}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="website">Website</label>
-                                    <input type="url" class="form-control" id="website">
-                                </div>
+                                
 
                                 <div class="form-group">
-                                    <label for="message">Message *</label>
-                                    <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                    
+                                    {{Form::label('', 'Message *',['for'=>'message'])}}
+
+                                    
+                                    {{Form::textarea('message', '',['class'=>'form-control','id'=>'message','placeholder'=>''])}}
                                 </div>
                                 <div class="form-group mb-0">
-                                    <input type="submit" value="Leave a comment"
-                                        class="btn btn-primary font-weight-semi-bold py-2 px-3">
+
+                                    {{Form::submit('Leave a comment',['class'=>'btn btn-success'])}}
+
                                 </div>
-                            </form>
+                            {!!Form::close()!!}
                         </div>
                     </div>
                     <!-- Comment Form End -->
                 </div>
+                @endforeach
 
                 <div class="col-lg-4">
                     <!-- Popular News Start -->
