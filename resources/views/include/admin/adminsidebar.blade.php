@@ -174,7 +174,7 @@
                 <a href="{{url('/orders')}}" class="nav-link">
                 <i class="nav-icon fas fa-folder"></i>
                 <p>
-                    Team
+                    Result
                     <i class="fas fa-angle-left right"></i>
                 </p>
                 </a>
@@ -183,14 +183,14 @@
                 <li class="nav-item">
                     <a href="{{url('/addteam')}}" class="nav-link">
                     <i class="far fa-file nav-icon"></i>
-                    <p>Add Team</p>
+                    <p>Add Result</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{url('/team')}}" class="nav-link">
                     <i class="far fa-file nav-icon"></i>
-                    <p>Team List </p>
+                    <p>Results </p>
                     </a>
                 </li>
 
