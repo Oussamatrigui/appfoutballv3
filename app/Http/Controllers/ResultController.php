@@ -32,7 +32,7 @@ $path = $request->file('equipe1_logo')->storeAs('public/logo1_images', $fileName
 else{
 $fileNameToStore ='noimage.jpg';
 
-if($request->hasFile('equipe2_logo')){
+if($request->hasFile('equipe2_logo,e')){
     $fileNamewithExt = $request->file('equipe2_logo')->getClientOriginalName();
     $fileName = pathinfo($fileNamewithExt, PATHINFO_FILENAME);
     $extension = $request->file('equipe2_logo')->getClientOriginalExtension();
