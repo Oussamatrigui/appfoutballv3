@@ -37,6 +37,7 @@
                     <th>Product Name</th>
                     <th>Product Category</th>
                     <th>Product Price</th>
+                    <th>Created at</th>
                     <th>Actions</th>
                   </tr>
                   </thead>
@@ -50,6 +51,7 @@
                       <td>{{$product->product_name}}</td>
                       <td>{{$product->product_category}}</td>
                       <td>{{'$ '.$product->product_price}}</td>
+                      <td>{{$product->created_at}}</td>
                       <td>
                         @if ($product->status != 0)
                             <a href="{{url('/desactiver_product/'.$product->id)}}" class="btn btn-success">Desactiver</a>
