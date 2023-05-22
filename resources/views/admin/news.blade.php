@@ -43,6 +43,7 @@
                                     <th>Picture</th>
                                     <th>Auteur</th>
                                     <th>Title</th>
+                                    <th>Created at</th>
                                     <th>Contenue</th>
                                     <th>Actions</th>
                                   </tr>
@@ -59,6 +60,7 @@
                                           {{ $news -> auteur }}
                                         </td>
                                         <td> {{ $news -> news_title }} </td>
+                                        <td> {{ $news -> created_at }} </td>
                                         <td> {{ $news -> news_content }} </td>
                                         <td>
 

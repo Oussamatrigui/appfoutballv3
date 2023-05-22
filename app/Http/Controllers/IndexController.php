@@ -8,13 +8,55 @@ use App\Models\Slider;
 use Illuminate\support\Facades\Mail;
 use App\http\Requests\ContactRequest;
 use App\Mail\ContactMessageCreated;
+use Carbon\Carbon;
 
 
 use App\Models\News;
+use App\Models\Comment;
+use Illuminate\Validation\Rule;
 
 class IndexController extends Controller
 {
     //
+
+    public function article1($titre){
+        $latestNews = News::latest()->take(3)->get();
+        // $comments = Comment::latest()->take(3)->get();
+        // $contents = News::findOrFail($titre);
+        $contents = News::where([
+          
+            ['news_title','LIKE','%'.$titre.'%']
+        ])
+        ->withCount('comments')->get();
+        $comments = [];
+
+        foreach ($contents as $content) {
+            $comments[$content->id] = $content->comments;
+        }
+        
+    
+        return view('client.article1', compact('latestNews','comments'))->with('contents', $contents);
+        
+    }
+
+    public function save_comment(Request $request){
+
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+            'news_id' => ['required', Rule::exists('news', 'id')],
+        ]);
+    
+        $comments = new Comment();
+        $comments->name = $validatedData['name'];
+        $comments->email = $validatedData['email'];
+        $comments->message = $validatedData['message'];
+        $comments->news_id = $validatedData['news_id'];
+        $comments->save();
+
+        return back()->with('status','Votre commentaire est enregistré avec succées');
+    }
     public function index(){
         $sliders = Slider::All()->where('status', 1);
         $contents = News::All();

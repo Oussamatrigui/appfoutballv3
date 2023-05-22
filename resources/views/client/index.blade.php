@@ -27,11 +27,13 @@
         </div>
     </section>
     <section class="resultat">
-        <h1>Résultats des matchs</h1>
-        
+       
+        <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Résultats des matchs</h2>
+        </div>
         
     
-        <table>
+        <table class="col-md-12 heading-section text-center ftco-animate">
             <thead>
                 <tr>
                     <th>Équipe domicile</th>
@@ -76,9 +78,11 @@
         </table>
     </section>
     <section class="resultat">
-        <h1>Prochain match</h1>
         
-        <table>
+        <div class="col-md-12 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Prochain match</h2>
+        </div>
+        <table class="col-md-12 heading-section text-center ftco-animate">
             <thead>
                 <tr>
                     <th>Équipe domicile</th>
@@ -112,7 +116,7 @@
         <div class="container">
             <div class="row justify-content-center mb-3 pb-3">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h2 class="mb-4">Actualite</h2>
+                    <h2 class="mb-4">News</h2>
                 </div>
             </div>
         </div>

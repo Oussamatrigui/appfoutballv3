@@ -12,6 +12,7 @@ use App\Http\Controllers\ContentController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\JournalistController;
 
 
 // Admin
@@ -22,6 +23,10 @@ Route::get('/client_registration',[AdminController::class,'client_registration']
 Route::get('/edit_profile_admin/{id}',[AdminController::class,'edit_profile_admin']);
 Route::post('/update_profile_admin',[AdminController::class,'update_profile_admin']);
 
+
+// Journalist
+
+Route::get('/journalist', [JournalistController::class, 'dash']);
 Route::get('/register_journalist', [ClientController::class, 'register_journalist']);
 Route::post('/journalist-register', [ClientController::class, 'journalistRegister']);
 Route::patch('/journalist-confirm/{id}', [AdminController::class, 'confirmJournalist'])->name('journalist.confirm');
@@ -78,18 +83,15 @@ Route::get('/desactiver_content/{id}', [ContentController::class, 'desactiver_co
 
 
 Route::get('/',[IndexController::class,'index']);
-Route::get('/article/{titre}',[IndexController::class,'article']);
+Route::get('/article/{titre}',[IndexController::class,'article1']);
+Route::get('/article1/{titre}',[IndexController::class,'article1']);
 Route::get('/news',[IndexController::class,'news']);
+
+Route::post('/save_comment',[IndexController::class,'save_comment']);
+
 Route::get('/select_par_cat/{category_name}', [productController::class, 'select_par_cat']);
 Route::get('/contact',[IndexController::class,'create']);
 Route::post('/contact',[IndexController::class,'store']);
-
-
-
-
-
-
-
 
 
 //Route::get('/admin', [AdminController::class, 'dashboard']);
@@ -101,10 +103,6 @@ Route::get('/edit_category/{id}', [CategoryController::class, 'edit_category']);
 Route::post('/updatecategory', [CategoryController::class, 'updatecategory']);
 Route::get('/delete_category/{id}', [CategoryController::class, 'delete_category']);
 
-
-
-
-
 Route::get('/addslider', [SliderController::class, 'addslider']);
 Route::post('/saveslider', [SliderController::class, 'saveslider']);
 
@@ -114,7 +112,6 @@ Route::post('updateslider', [SliderController::class, 'updateslider']);
 Route::get('/delete_slider/{id}',[SliderController::class, 'delete_slider']);
 Route::get('/desactiver_slider/{id}',[SliderController::class, 'desactiver_slider']);
 Route::get('/activer_slider/{id}',[SliderController::class, 'activer_slider']);
-
 
 Route::get('/addproduct', [ProductController::class, 'addproduct'])->name('dashboard');
 Route::post('/saveproduct', [ProductController::class, 'saveproduct']);

@@ -3,9 +3,7 @@
   <head>
     <title> @yield('title')</title>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="International Five Consulting" name="keywords">
-    <meta content="International Five Consulting" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">

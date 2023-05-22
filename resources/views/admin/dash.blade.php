@@ -4,6 +4,7 @@
 @endsection
 
 @section('style')
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <link rel="stylesheet" href="{{asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')}}">
         <!-- Tempusdominus Bootstrap 4 -->
@@ -19,6 +20,9 @@
         <link rel="stylesheet" href="{{asset('admin_back/plugins/daterangepicker/daterangepicker.css')}}">
         <!-- summernote -->
         <link rel="stylesheet" href="{{asset('admin_back/plugins/summernote/summernote-bs4.min.css')}}">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 @endsection
 
 @section('con')
@@ -45,11 +49,9 @@
             </div>
                        
             <div class="container-fluid">
-                <div class="row">
-                               
-                    <section class="col-lg-9 connectedSortable">
-                        <div class="container container-fluid">
-                            <h4>Demande d'inscription des journalistes :</h4><br>
+                
+                    <section class="col-lg-11">
+                        <h4>Demande d'inscription des journalistes :</h4><br>
                         
                             @if (session('status'))
                                 <div class="alert alert-success">
@@ -62,8 +64,8 @@
                                 </div>
                             @endif
                         
-                    
-                            <table class="table">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Nom</th>
@@ -111,81 +113,33 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
-                            {{-- <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Nom</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                        <th>Action</th>
-                                        <th>Status actuel</th>
-                                    </tr>
-                                </thead>
-                                <h4>Liste des administrateur:</h4>
-                                <tbody>
-                                    @foreach ($admins as $admin)
-                                        <tr>
-                                            <td>{{ $admin->name }}</td>
-                                            <td>{{ $admin->email }}</td>
-                                            <td>{{ $admin->role }}</td>
-                                        <td>
-                                            <div class="row space-between">
-                                                <form action="{{ route('journalist.confirm', $journalist->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('PATCH')
-                                                    <div class="col-xs-6 text-left">
-                                                        <div class="previous">
-                                                            <button type="submit" class="btn btn-success">Activer
-                                                              <i class="bi bi-check"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                                <form action="{{ route('journalist.desactiver', $journalist->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('PATCH')
-                                                    <div class="col-xs-6 text-right">   
-                                                        <div class="next">
-                                                            <button type="submit" class="btn btn-warning"> Desactiver
-                                                              <i class="glyphicon glyphicon-chevron-right"></i>
-                                                          </button>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </form>
-                                            </div>
-                                        </td>
-                                        <td>
-                                                @if ( $journalist->is_confirmed)
-                                                    <div class="progress-bar bg-info"> Approuvé</div>
-                                                @else
-                                                <div class="progress-bar bg-danger"> Desactiver</div>
-                                                    
-                                                @endif
-                                                
-                                            </td>
-                                           
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table> --}}
-
+                        </div>
                             
-                        </div>            
+                                  
                     </section>
-                                
-                    <section class="col-lg-3 connectedSortable">
-
-                        @include('include.admin.adminchat')
-                                            
-                    </section>
-                                
-                </div>
+               
             </div>
+                    <div class="container-fluid">
+                        <div class="row">               
+                            <section class="col-sm-4 connectedSortable">
+
+                                @include('include.admin.adminchat')
+                                                    
+                            </section>
+                        </div>
+                    </div>
+                                
+                
+            
 @endsection
         @section('dashboardscript')
-            
+
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+                <script src="{{ asset('js/app.js') }}"></script>
             <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
                 <script src="{{asset('admin_back/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
                 <script src="{{asset('admin_back/dist/js/pages/dashboard.js')}}"></script>
