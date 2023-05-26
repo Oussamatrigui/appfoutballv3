@@ -11,23 +11,21 @@
     <link rel="shortcut icon" type="image/png" href="https://wael-toumi.me/images/logo.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/animate.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/ionicons.min.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/bootstrap-datepicker.css">
-    <link rel="shortcut icon" type="image/png" href="https://wael-toumi.me/images/logo.png">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/flaticon.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/icomoon.css">
-    <link rel="stylesheet" href="https://wael-toumi.me/css2/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.14.0/jquery.timepicker.css">
-	<link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jquery.timepicker.css')}}">
   </head>
   <body class="goto-here">
     {{-- Start Nav --}}
-			@include('include.client.nav')
+      @include('include.indexheader')
     {{-- ENd nav
 
     {{-- Start Content --}}
@@ -61,10 +59,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-  <script src="https://wael-toumi.me/js/scrollax.min.js"></script>
+  <script src="{{asset('js/scrollax.min.js')}}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.googlemap/1.5.1/jquery.googlemap.js"></script>
-  <script src="https://wael-toumi.me/js/main.js"></script>
+  <script src="{{asset('js/main.js')}}"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
    <!-- JavaScript Libraries -->
