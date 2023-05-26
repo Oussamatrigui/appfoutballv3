@@ -27,8 +27,6 @@
 
 @section('con')
                   
-                    
-                        
                     @include('include.admin.admincontentheader')
 
             <div class="container-fluid">
@@ -36,7 +34,7 @@
  
                     @include('include.admin.adminorders')
 
-                    @include('include.admin.adminbouncerate')
+                    {{-- @include('include.admin.adminbouncerate') --}}
                                  
 
                     @include('include.admin.adminuserregistration')
@@ -122,7 +120,7 @@
                     <div class="container-fluid">
                         <div class="row">               
                             <section class="col-sm-4 connectedSortable">
-
+                                
                                 @include('include.admin.adminchat')
                                                     
                             </section>
