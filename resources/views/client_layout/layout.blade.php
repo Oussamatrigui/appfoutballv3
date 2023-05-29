@@ -4,11 +4,11 @@
     <title> @yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+   
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="https://wael-toumi.me/images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="{{asset('images/cot.png')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
@@ -69,11 +69,10 @@
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
    <script src="http://wael-toumi.me/lib/easing/easing.min.js"></script>
-   <script src="http://wael-toumi.me/lib/owlcarousel/owl.carousel.min.js"></script>
+   <script src="{{asset('news_front/lib/owlcarousel/owl.carousel.min.js')}}"></script>
    <!-- Template Javascript -->
-   <script src="http://wael-toumi.me/js2/main.js"></script>
-   
-   <script src="http://wael-toumi.me/social_share_button.js"></script>
+   <script src="{{asset('news_front/js/main.js')}}"></script>
+   <script src="http://wael-toumi.me/social_share_button.js"></script> 
    
   </body>
 </html>

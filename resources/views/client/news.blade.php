@@ -64,32 +64,38 @@ News | | | FIF | | | Equipe Nationale de Cote d-ivoire
     </div>
 </div>
 <!-- Featured News Slider End -->
-<br>
-    <div class="container-fluid pt-5 mb-3 row">
-        
-              @foreach ($contents as $content)
-              <div class="col-md-6 col-lg-3 ftco-animate">
-                  <div class="product">
-                      <a href="#" class="img-prod"><img class="img-fluid"
-                              src="/storage/news_images/{{ $content->news_image }}" alt="News">
-                          <div class="overlay"></div>
-                      </a>
-                      <div class="text py-3 pb-4 px-3 text-center">
-                          <p>{{ $content->news_title }}</p>
-
-                          <p><span>auteur:{{ $content->auteur }}</span>
-                          </p>
-                          <p><a href="{{ url('/article/' . $content->news_title) }}" class="btn btn-primary">voir
-                                  plus</a></p>
-
-
-                      </div>
-                  </div>
-              </div>
-          @endforeach
-     
+<br> 
+    <div class="container-fluid px-2 py-2">
+            <div class="row">
+                @foreach ($contents as $content)
+                    <div class="col-md-4 ftco-animate">
+                        <div class="product">
+                            <a href="{{ url('/article/' . $content->news_title) }}" class="img-prod">
+                                <img class="img-fluid" style="height:250px;width:350px;" 
+                                src="/storage/news_images/{{ $content->news_image }}" alt="News">
+                            </a>
+                                <div class="text-center">
+                                    <div class="container">
+                                        <div class="row">
+                                          <div class="col-sm">
+                                            <p class="mb-3 text-secondary text-uppercase font-weight-bold"> {{ $content->news_title }} </p>
+                                          </div>
+                                        </div>
+                                    </div>
+                                        <p>
+                                            <a href="{{ url('/article/' . $content->news_title) }}" class="btn btn-primary">voir
+                                                plus
+                                            </a>
+                                        </p>
+                                </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
+            
         </div>
+
+        
         <div class="row mt-5">
             <div class="col text-center">
                 <div class="block-27">
