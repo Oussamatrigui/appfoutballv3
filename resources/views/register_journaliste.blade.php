@@ -59,8 +59,6 @@
                                 </div>
                                 {{-- {!!Form::close()!!} --}}
                             </form>
-                       
-                        
                     </div>
                 </div>
             </div>

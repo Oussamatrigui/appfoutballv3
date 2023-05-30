@@ -64,7 +64,6 @@
     <script src="{{asset('js/main.js')}}"></script>
    <!-- Template Javascript -->
    <script src="js2/main.js"></script>
-   
    <script src="social_share_button.js"></script>
    
   </body>

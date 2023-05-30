@@ -123,9 +123,10 @@
         <div class="container">
             <div class="row">
                 @foreach ($contents as $content)
-                    <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="col-md-6 col-lg-3 ftco-animate text-center">
                         <div class="product">
-                            <a href="#" class="img-prod"><img class="img-fluid"
+                            <a href="#" class="img-prod">
+                                <img class="img-fluid" style="height:200px;width:250;"
                                     src="/storage/news_images/{{ $content->news_image }}" alt="News">
                                 <div class="overlay"></div>
                             </a>

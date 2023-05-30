@@ -52,10 +52,41 @@
                                     {{ $content-> news_content}} 
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                            <div class="bg-white border border-top-0 p-4">
                                 <div class="d-flex align-items-center">
+                                    <div class="ftco-animate" style=".social-buttons {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        margin-top: 50px;
+                                      }">
+                                      <div class="container">
+                                            <div class="row justify-content-md-center">
+                                                <div class="col col-lg-2">
+                                                    <a href="#" class="social-button facebook">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col col-lg-2">
+                                                    <a href="#" class="social-button twitter">
+                                                    <i class="fab fa-twitter"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col col-lg-2">
+                                                    <a href="#" class="social-button linkedin">
+                                                    <i class="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col col-lg-2">
+                                                    <a href="#" class="social-button pinterest">
+                                                    <i class="fab fa-pinterest"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                      </div>
+                                      </div>
                                     {{-- <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
                                     <span>John Doe</span> --}}
+
                                 </div>
                                 <div class="d-flex align-items-center">
                                     {{-- <span class="ml-3"><i class="far fa-eye mr-2"></i>12345</span>
@@ -86,7 +117,8 @@
                                                 </small>
                                             </h6>
                                             <p>
-                                                {{ $comment->message }}</p>     
+                                                {{ $comment->message }}
+                                            </p>     
                                         </div>
                                     </div>
                                 </div>
