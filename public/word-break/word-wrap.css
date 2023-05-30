@@ -1,0 +1,39 @@
+div {
+     word-wrap: break-word;
+}
+/* .share-button {
+  display: flex;
+  align-items: center;
+}
+
+.share-button a {
+  display: inline-block;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.share-button a i {
+  font-size: 18px;
+}
+
+.share-button a.facebook {
+  background-color: #3b5998;
+}
+
+.share-button a.twitter {
+  background-color: #1da1f2;
+}
+
+.share-button a.linkedin {
+  background-color: #0077b5;
+}
+
+.share-button a.instagram {
+  background-color: #c32aa3;
+} */

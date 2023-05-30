@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="http://wael-toumi.me/social_share_button.css" rel="stylesheet">
     <link href="http://wael-toumi.me/word-wrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('word-break/word-wrap.css')}}">
     
     
     <div class="container-fluid mt-5 mb-3 pt-3">
